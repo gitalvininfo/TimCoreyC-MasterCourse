@@ -1,15 +1,34 @@
 ﻿
 
-Console.Write("Hi user! What is your age? ");
-string ageText = Console.ReadLine();
+//bool isComplete = false;
 
-bool isValidAge = int.TryParse(ageText, out int age);
+//if(isComplete)
+//{
+//    Console.WriteLine("The statement is true.");
+//}
+//else
+//{
+//    Console.WriteLine("The statement is false.");
+//}
 
-int targetYear = 25;
 
-Console.WriteLine($"Your age is:  {age}");
-Console.WriteLine($"Your age in {targetYear} years is {age + targetYear}");
-Console.WriteLine($"Your age {targetYear} years ago is {age - targetYear}");
+//Console.WriteLine("End of program...");
+
+
+
+
+
+Console.Write("Write your name: ");
+string name = Console.ReadLine();
+
+if(name.ToLower() == "alvin")
+{
+    Console.WriteLine("Hello Alvin :P");
+}   else
+{
+    Console.WriteLine($"Hello {name} 😫");
+}
+
 
 Console.Beep();
 Console.ReadKey();
