@@ -1,23 +1,22 @@
 ﻿
-String firstName = String.Empty;
-String lastName = String.Empty;
-String filePath = String.Empty;
-
-firstName = "Alvin";
-lastName = "Yanson";
-// just like \n the \ identifies the next character as special
-// since it is also a slash, then it will consider as slash
-//filePath = "C:\\Temp\\Demo";
-
-// the @ treats the string as string literal characters; gg ez;
-filePath = @"C:\Temp\Demo";
-
-String testString = $@"The file for {firstName} is at {filePath}";
 
 
-Console.WriteLine($"{firstName} {lastName}");
-Console.WriteLine($"{filePath}");
-Console.WriteLine(testString);
+
+int age = 0;
+
+age = 43;
+
+Console.WriteLine(age);
+
+// Two billion +/-
+// signed Int32 also is int
+// unsigned - 4 billion
+// bit - 0/1
+// byte - 8 bits = 00000000 - any of this 0 can be 1
+// 1, 11, 111 = 2 4 8
+
+
+
 
 Console.Beep();
 Console.ReadKey();
