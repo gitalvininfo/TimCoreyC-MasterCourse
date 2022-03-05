@@ -1,19 +1,12 @@
 ﻿
 
+int? age = null;
+bool? birthday = null;
+double? battingAverage = null;
+string firstname = null;
 
 
-Boolean isComplete = false;
-
-isComplete = !isComplete;
-
-Console.WriteLine(isComplete);
-
-
-
-
-
-
-
+Console.WriteLine(age);
 
 
 
