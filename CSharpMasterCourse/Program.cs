@@ -1,36 +1,28 @@
 ﻿
-//string[] firstnames = new string[5];
 
-//firstnames[0] = "alvin1";
-//firstnames[1] = "alvin2";
-//firstnames[2] = "alvin3";
-//firstnames[3] = "alvin4";
-//firstnames[4] = "alvin5";
-//firstnames[5] = "alvin";
+string[] names = new string[] { "alvin0", "alvin1", "alvin2" };
 
+Console.Write("Enter which index to select from 0 - 2: ");
+string indexString = Console.ReadLine();
 
-//foreach (string firstname in firstnames) {
-//    Console.WriteLine(firstname);
-//}
+bool isValidIndex = int.TryParse(indexString, out int index);
 
-
-string data = "Tim,Sue,Bob,Jane,Frank";
-
-string[] firstNames = data.Split(",");
-
-foreach (string firstname in firstNames)
+if (isValidIndex)
 {
-    Console.Write($"{firstname}, ");
 
+    try
+    {
+        Console.WriteLine($"You selected {names[index]}");
+
+    }
+    catch (IndexOutOfRangeException e)
+    {
+        Console.WriteLine("That index does not exist");
+    }
 }
-
-Console.WriteLine();
-
-string[] lastNames = new string[] { "Corey", "Smith", "Jones" };
-
-foreach (string lastname in lastNames)
+else
 {
-    Console.Write($"{lastname}, ");
+    Console.WriteLine("That is not a number");
 }
 
 
