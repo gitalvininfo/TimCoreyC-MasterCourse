@@ -1,29 +1,43 @@
 ﻿
 
-Console.Write("What is your first name: ");
-string firstName = Console.ReadLine();
+string firstName = "alvin";
+int age = 24;
 
-
-Console.Write("What is your last name: ");
-string lastName = Console.ReadLine();
-
-if(firstName.ToLower() == "alvin" && lastName.ToLower() == "yanson")
+switch(age)
 {
-    Console.WriteLine("Hello Alvin :P");
+    case >= 0 and < 18:
+        Console.WriteLine("You are a child");
+        break;
+
+    case >= 18 and < 99:
+        Console.WriteLine("You should have a job ");
+        break;
+
+    case >= 66:
+        Console.WriteLine("Retire now");
+        break;
+
+    default:
+        Console.WriteLine("age was not in expected range");
+        break;
+
 }
-   
-else 
-{
-    Console.WriteLine("WTF");
-}
 
 
+//switch(firstName)
+//{
+//    case "alvin":
+//        Console.WriteLine("Hello alvin");
+//        break;
 
+//    case "tom":
+//        Console.WriteLine("Hello tom");
+//        break;
 
-
-
-
-
+//    default:
+//        Console.WriteLine("Sorry I dont know you.");
+//        break;
+//}
 
 
 
