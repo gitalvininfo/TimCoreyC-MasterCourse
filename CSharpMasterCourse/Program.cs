@@ -1,33 +1,44 @@
 ﻿
 
-//bool isComplete = false;
-
-//if(isComplete)
-//{
-//    Console.WriteLine("The statement is true.");
-//}
-//else
-//{
-//    Console.WriteLine("The statement is false.");
-//}
+Console.Write("What is your first name: ");
+string firstName = Console.ReadLine();
 
 
-//Console.WriteLine("End of program...");
+Console.Write("What is your last name: ");
+string lastName = Console.ReadLine();
 
-
-
-
-
-Console.Write("Write your name: ");
-string name = Console.ReadLine();
-
-if(name.ToLower() == "alvin")
+if(firstName.ToLower() == "alvin" && lastName.ToLower() == "yanson")
 {
     Console.WriteLine("Hello Alvin :P");
-}   else
-{
-    Console.WriteLine($"Hello {name} 😫");
 }
+   
+else 
+{
+    Console.WriteLine("WTF");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Console.Beep();
