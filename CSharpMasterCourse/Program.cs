@@ -1,61 +1,49 @@
 ﻿
 
-bool isContinue = true;
+bool isValidAge;
+int age;
+//int testNumber = 0;
+
+//do
+//{
+//    Console.WriteLine(testNumber);
+//    testNumber++;
+//} while (testNumber != 10);
 
 
-while (isContinue)
+do
 {
-
-    Console.Write("Enter your name: ");
-    string name = Console.ReadLine();
-
     Console.Write("Enter your age: ");
-    int age = Convert.ToInt32(Console.ReadLine());
+    string ageText = Console.ReadLine();
 
-    int waitingYears = 21 - age;
+    isValidAge = int.TryParse(ageText, out age);
 
-    bool isProfessor = name.ToLower() == "bob" || name.ToLower() == "sue" || name.ToLower() == "tim";
-
-    if (isProfessor)
+    if (!isValidAge)
     {
-        Console.WriteLine("Hello Professor!");
+        Console.WriteLine("That was an invalid age");
     }
 
-    else
-    {
-        Console.WriteLine("Hello Student!");
-        if (age < 21)
-        {
-            Console.WriteLine($"You must wait {waitingYears} years to start class");
-        }
-        else
-        {
-            Console.WriteLine("Go to school user...");
-        }
-    }
+} while (!isValidAge);
 
-    bool isValidResponse = false;
+Console.WriteLine("You are valid age");
 
-    while (!isValidResponse){
-        Console.WriteLine("Do you want to continue? Y/N");
-        string response = Console.ReadLine();
 
-        if (response.ToLower() == "y")
-        {
-            isValidResponse = true;
-            isContinue = true;
-        }
-        else if (response.ToLower() == "n")
-        {
-            isValidResponse = true;
-            isContinue = false;
-            Console.WriteLine("Thanks for playing...");
-        }   else
-        {
-            isValidResponse = false;
-        }
-    }
-}
+
+
+// runs the code at least once.
+//do
+//{
+
+//} while(true)
+
+
+// runs the code 0 or more times
+//while(true)
+//{
+
+//}
+
+
 
 
 Console.Beep();
