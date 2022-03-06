@@ -12,5 +12,9 @@ namespace CSharpMasterCourse
         {
             Console.WriteLine("Hello User");
         }
+        public static void SayGoodbye()
+        {
+            Console.WriteLine("Goodbye User");
+        }
     }
 }
