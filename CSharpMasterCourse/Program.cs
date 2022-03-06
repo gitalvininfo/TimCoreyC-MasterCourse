@@ -1,15 +1,13 @@
 ﻿
 
-Console.Write("Enter the names in comma separated: ");
-string data = Console.ReadLine();
+string data = "Tim,Corey,Jane,Sue";
+List<string> names = data.Split(",").ToList();
 
-string[] names = data.Split(",");
 
-for (int i = 0; i < names.Length; i++)
+foreach(string name in names)
 {
-    Console.WriteLine($"Hello {names[i]}");
+    Console.WriteLine(name);
 }
-
 
 Console.Beep();
 Console.ReadKey();
