@@ -25,5 +25,17 @@ namespace CSharpMasterCourse
 
             return name;
         }
+
+        // tuple
+        public static (string firstName, string lastName) GetFullName()
+        {
+            Console.Write("What is your first name: ");
+            string firstname = Console.ReadLine();
+
+            Console.Write("What is your last name: ");
+            string lastname = Console.ReadLine();
+
+            return (firstname, lastname);
+        }
     }
 }
