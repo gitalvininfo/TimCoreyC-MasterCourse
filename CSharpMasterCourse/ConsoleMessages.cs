@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpMasterCourse
 {
-    public static class SampleMethod
+    public static class ConsoleMessages
     {
         public static void SayHi()
         {
