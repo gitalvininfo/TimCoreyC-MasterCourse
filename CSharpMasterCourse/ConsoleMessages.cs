@@ -8,9 +8,9 @@ namespace CSharpMasterCourse
 {
     public static class ConsoleMessages
     {
-        public static void SayHi()
+        public static void SayHi(string name)
         {
-            Console.WriteLine("Hello User");
+            Console.WriteLine($"Hello {name}");
         }
         public static void SayGoodbye()
         {
