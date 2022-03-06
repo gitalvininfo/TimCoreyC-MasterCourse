@@ -1,43 +1,22 @@
 ﻿
-bool isContinue = true;
-bool isValidResponse = false;
-string response = "";
 
+Dictionary<string, string> lookup = new Dictionary<string, string>();
 
-List<string> studentNames = new List<string>();
-
-do
-{
-    Console.Write("Enter Student name: ");
-    string name = Console.ReadLine();
-    studentNames.Add(name);
-
-    do
-    {
-        Console.Write("Student added... Continue Y/N: ");
-        response = Console.ReadLine();
-
-        if(response.ToLower() != "y" && response.ToLower() != "n")
-        {
-            isValidResponse = false;
-        }
-        else
-        {
-            isValidResponse = true;
-        }
-
-        if(response.ToLower() == "n")
-        {
-            Console.WriteLine($"Total count of students is {studentNames.Count}");
-        }
-
-
-    } while (!isValidResponse);
+lookup["animal"] = "not a human";
+lookup["fish"] = "not a human that swims";
+lookup["human"] = "Us";
+Console.WriteLine($"the definition of fish is {lookup["fish"]}");
 
 
 
-} while (response == "y");
 
+Dictionary<int, string> employees = new Dictionary<int, string>();
+
+employees[95] = "Tim Corey";
+employees[28] = "Sue Storm";
+
+
+Console.WriteLine($"the employee with id number 28 is {employees[28]}");
 
 
 Console.Beep();
