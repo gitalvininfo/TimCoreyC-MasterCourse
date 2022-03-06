@@ -26,21 +26,17 @@ do
             isValidResponse = true;
         }
 
-        if (response.ToLower() == "y")
-        {
-            isContinue = true;
-        }
-        else
+        if(response.ToLower() == "n")
         {
             Console.WriteLine($"Total count of students is {studentNames.Count}");
-            isContinue = false;
         }
+
 
     } while (!isValidResponse);
 
 
 
-} while (isContinue);
+} while (response == "y");
 
 
 
