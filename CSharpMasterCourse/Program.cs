@@ -1,35 +1,31 @@
 ﻿
 
-Dictionary<int, string> employees = new Dictionary<int, string>();
+
+//string data = "Tom,Frank,Sue,Tim,Jones";
+
+//List<string> names = data.Split(",").ToList();
 
 
-employees[1] = "alvin1";
-employees[2] = "alvin2";
-employees[3] = "alvin3";
-employees[4] = "alvin4";
-employees[5] = "alvin5";
+//for (int i = 0; i < names.Count; i++)
+//{
+//    Console.WriteLine(names[i]);
+//}
 
-Console.Write("Please choose employee 1-5: ");
-string idString = Console.ReadLine();
 
-bool isValidID = int.TryParse(idString, out int id);
+List<decimal> charges = new();
 
-if(isValidID)
+charges.Add(23.78M);
+charges.Add(23.78M);
+charges.Add(23.78M);
+
+decimal total = 0;
+
+for(int i = 0; i < charges.Count; i++)
 {
-    if (id <= 5)
-    {
-        Console.WriteLine($"The employee is {employees[id]}.");
-    }
-    else
-    {
-        Console.WriteLine("That employee does not exist.");
-    }
-}
-else
-{
-    Console.WriteLine("That is not a number");
+    total += charges[i];
 }
 
+Console.WriteLine($"Total is: {total}");
 
 
 
