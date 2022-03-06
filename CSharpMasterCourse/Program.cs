@@ -1,29 +1,30 @@
 ﻿
+bool isContinue = true;
+string response = "";
 
+List<string> studentNames = new List<string>();
 
-List<string> firstNames = new List<string>();
-
-firstNames.Add("alvin1");
-firstNames.Add("alvin2");
-firstNames.Add("alvin3");
-firstNames.Add("alvin4");
-firstNames.Add("alvin5");
-
-Console.WriteLine(firstNames[firstNames.Count - 1]);
-
-string data = "Corey,Tim,Jones,Frank";
-List<string> lastNames = data.Split(",").ToList();
-lastNames.Add("Alvin");
-
-foreach(string lastName in lastNames)
+do
 {
-    Console.WriteLine(lastName);
-}
+    Console.Write("Enter Student name: ");
+    string name = Console.ReadLine();
+    studentNames.Add(name);
+
+    Console.Write("Student added... Continue Y/N: ");
+    response = Console.ReadLine();
+    if(response.ToLower() == "y")
+    {
+        isContinue = true;
+    }
+    else
+    {
+        Console.WriteLine($"Total count of students is {studentNames.Count}");
+        isContinue = false;
+    }
 
 
 
-
-
+} while (isContinue);
 
 
 
