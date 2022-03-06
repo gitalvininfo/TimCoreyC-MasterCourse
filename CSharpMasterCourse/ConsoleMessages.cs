@@ -12,9 +12,18 @@ namespace CSharpMasterCourse
         {
             Console.WriteLine($"Hello {name}");
         }
+        
         public static void SayGoodbye()
         {
             Console.WriteLine("Goodbye User");
+        }
+
+        public static string GetUsersName()
+        {
+            Console.Write("What is your name: ");
+            string name = Console.ReadLine();
+
+            return name;
         }
     }
 }
