@@ -1,29 +1,29 @@
 ﻿
 
-string[] names = new string[] { "alvin0", "alvin1", "alvin2" };
 
-Console.Write("Enter which index to select from 0 - 2: ");
-string indexString = Console.ReadLine();
+List<string> firstNames = new List<string>();
 
-bool isValidIndex = int.TryParse(indexString, out int index);
+firstNames.Add("alvin1");
+firstNames.Add("alvin2");
+firstNames.Add("alvin3");
+firstNames.Add("alvin4");
+firstNames.Add("alvin5");
 
-if (isValidIndex)
+Console.WriteLine(firstNames[firstNames.Count - 1]);
+
+string data = "Corey,Tim,Jones,Frank";
+List<string> lastNames = data.Split(",").ToList();
+lastNames.Add("Alvin");
+
+foreach(string lastName in lastNames)
 {
-
-    try
-    {
-        Console.WriteLine($"You selected {names[index]}");
-
-    }
-    catch (IndexOutOfRangeException e)
-    {
-        Console.WriteLine("That index does not exist");
-    }
+    Console.WriteLine(lastName);
 }
-else
-{
-    Console.WriteLine("That is not a number");
-}
+
+
+
+
+
 
 
 
