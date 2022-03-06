@@ -1,32 +1,14 @@
 ﻿
 
+Console.Write("Enter the names in comma separated: ");
+string data = Console.ReadLine();
 
-//string data = "Tom,Frank,Sue,Tim,Jones";
+string[] names = data.Split(",");
 
-//List<string> names = data.Split(",").ToList();
-
-
-//for (int i = 0; i < names.Count; i++)
-//{
-//    Console.WriteLine(names[i]);
-//}
-
-
-List<decimal> charges = new();
-
-charges.Add(23.78M);
-charges.Add(23.78M);
-charges.Add(23.78M);
-
-decimal total = 0;
-
-for(int i = 0; i < charges.Count; i++)
+for (int i = 0; i < names.Length; i++)
 {
-    total += charges[i];
+    Console.WriteLine($"Hello {names[i]}");
 }
-
-Console.WriteLine($"Total is: {total}");
-
 
 
 Console.Beep();
