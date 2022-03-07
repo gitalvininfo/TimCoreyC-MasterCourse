@@ -3,7 +3,9 @@
 using CSharpMasterCourse;
 
 List<string> users = new();
-List<int> guests = new();
+//List<int> guests = new();
+
+int guests = 0;
 
 bool isContinue = true;
 string response = "";
@@ -15,7 +17,7 @@ do
     users.Add(name);
 
     int num = GuestBook.GetNumberOfPeople();
-    guests.Add(num);
+    guests += num;
 
     do
     {
@@ -38,12 +40,12 @@ do
                 Console.Write(user + ", ");
             }
 
-            int total = 0;
-            foreach(int guest in guests)
-            {
-                total += guest;
-            }
-            Console.WriteLine("The total number of guests is: " + total);
+            //int total = 0;
+            //foreach(int guest in guests)
+            //{
+            //    total += guest;
+            //}
+            Console.WriteLine("The total number of guests is: " + guests);
 
 
         }
