@@ -15,16 +15,14 @@ namespace CSharpMasterCourse
         {
 
 
-            for(int i = 0; i < 20; i++)
-            {
-                Console.Write($"{i}");
+            int total = 0;
 
-                for(int j = 0; j < 20; i++)
-                {
-                    Console.Write($"{j}");
-                }
-                Console.WriteLine();
+            for(int i = 1; i <= 5; i++)
+            {
+                total += 5 * i;
             }
+
+            Console.WriteLine($"The total is {total}");
 
 
             Console.Beep();
