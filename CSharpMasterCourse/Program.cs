@@ -14,19 +14,41 @@ namespace CSharpMasterCourse
         static void Main(string[] args)
         {
 
-
-            int total = 0;
-
-            for(int i = 1; i <= 5; i++)
+            try
             {
-                total += 5 * i;
+                BadCall();
+            } catch(Exception e)
+            {
+                Console.WriteLine("There was an exception thrown in our app.");
+                Console.WriteLine($"caller > {e}");
             }
-
-            Console.WriteLine($"The total is {total}");
-
+           
 
             Console.Beep();
             Console.ReadKey();
+        }
+
+        public static void BadCall()
+        {
+            int[] ages = new int[] { 1, 3, 5 };
+
+            for (int i = 0; i <= ages.Length; i++)
+            {
+                try
+                {
+                    Console.WriteLine($"{ages[i]}");
+                }
+                catch (IndexOutOfRangeException e)
+                {
+                    Console.WriteLine("we had an error");
+                    Console.WriteLine($"bad call > {e.Message}");
+
+                    /* to be catch who ever calls this shit */
+                    throw new Exception("there was an error handling our array", e);
+                    //throw;
+                }
+            }
+
         }
 
     }
