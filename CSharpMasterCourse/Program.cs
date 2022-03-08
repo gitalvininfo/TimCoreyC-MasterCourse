@@ -1,58 +1,42 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-using CSharpMasterCourse;
-
-List<string> users = new();
-//List<int> guests = new();
-
-int guests = 0;
-
-bool isContinue = true;
-string response = "";
-bool isValidResponse = false;
-
-do
+namespace CSharpMasterCourse
 {
-    string name = GuestBook.GetUserName();
-    users.Add(name);
-
-    int num = GuestBook.GetNumberOfPeople();
-    guests += num;
-
-    do
+    class Program
     {
-        Console.Write("Do you want to continue. Y/N: ");
-        response = Console.ReadLine();
 
-        if (response.ToLower() != "y" && response.ToLower() != "n")
-        {
-            isValidResponse = false;
-        }   else
-        {
-            isValidResponse = true;
-        }
 
-        if(response.ToLower() == "n")
+        static void Main(string[] args)
         {
-            Console.WriteLine("The users are the following: ");
-            foreach (string user in users)
+
+
+            for(int i = 0; i < 20; i++)
             {
-                Console.Write(user + ", ");
+                Console.Write($"{i}");
+
+                for(int j = 0; j < 20; i++)
+                {
+                    Console.Write($"{j}");
+                }
+                Console.WriteLine();
             }
 
-            //int total = 0;
-            //foreach(int guest in guests)
-            //{
-            //    total += guest;
-            //}
-            Console.WriteLine("The total number of guests is: " + guests);
 
-
+            Console.Beep();
+            Console.ReadKey();
         }
 
-    } while (!isValidResponse);
+    }
+}
 
-} while (response.ToLower() == "y");
 
-Console.Beep();
-Console.ReadKey();
+
+
+
+
+
