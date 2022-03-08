@@ -19,10 +19,9 @@ namespace CSharpMasterCourse
                 BadCall();
             } catch(Exception e)
             {
-                Console.WriteLine("There was an exception thrown in our app.");
                 Console.WriteLine($"caller > {e}");
             }
-           
+                     
 
             Console.Beep();
             Console.ReadKey();
@@ -30,25 +29,14 @@ namespace CSharpMasterCourse
 
         public static void BadCall()
         {
-            int[] ages = new int[] { 1, 3, 5 };
-
-            for (int i = 0; i <= ages.Length; i++)
+            for (int i = 1; i <= 5; i++)
             {
-                try
+                Console.WriteLine(i);
+                if (i == 5)
                 {
-                    Console.WriteLine($"{ages[i]}");
-                }
-                catch (IndexOutOfRangeException e)
-                {
-                    Console.WriteLine("we had an error");
-                    Console.WriteLine($"bad call > {e.Message}");
-
-                    /* to be catch who ever calls this shit */
-                    throw new Exception("there was an error handling our array", e);
-                    //throw;
+                    throw new Exception("Tim corey said I will throw");
                 }
             }
-
         }
 
     }
