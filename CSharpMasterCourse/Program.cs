@@ -13,26 +13,31 @@ namespace CSharpMasterCourse
 
         static void Main(string[] args)
         {
-            try
-            {
-                SimpleMethod();
-            }
-            catch (AccessViolationException ex)
-            {
-                Console.WriteLine(ex);
-            }
-
-
+            RunsALot();
             Console.Beep();
             Console.ReadKey();
         }
 
 
-        private static void SimpleMethod()
+        private static void RunsALot()
         {
-            throw new AccessViolationException("You should not access this memory dog!");
-        }
+            long total = 0;
+            int test = 0;
+            for (int i = -1000; i <= 1000; i++)
+            {
+                total += i;
+                try
+                {
+                    test = 5 / i;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("There was an exception.");
+                }
+            }
 
+            Console.WriteLine($"The total is {total}");
+        }
 
 
     }
