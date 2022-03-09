@@ -21,22 +21,13 @@ namespace CSharpMasterCourse
 
         private static void RunsALot()
         {
-            long total = 0;
-            int test = 0;
-            for (int i = -1000; i <= 1000; i++)
+            for(int i = 0; i <= 100; i++)
             {
-                total += i;
-                try
+                if(i == 73)
                 {
-                    test = 5 / i;
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("There was an exception.");
+                    //throw new Exception(AccessViolationException e);
                 }
             }
-
-            Console.WriteLine($"The total is {total}");
         }
 
 
