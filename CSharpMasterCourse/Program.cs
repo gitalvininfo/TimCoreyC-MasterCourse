@@ -13,17 +13,20 @@ namespace CSharpMasterCourse
         static void Main(string[] args)
         {
 
-            string firstName = RequestData.GetAString("What is your firstname? ");
+            Console.WriteLine("Welcome to my Math.");
+            Console.Write("Enter first number: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter second number: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
             
-            UserMessages.ApplicationStartMessage(firstName);
 
-            double x = RequestData.GetADouble("Please enter your enter first number: ");
-            double y = RequestData.GetADouble("Please enter your enter second number: ");
+            Console.WriteLine($"Add {CustomMath.Add(num1, num2)}");
+            Console.WriteLine($"Subtract {CustomMath.Subtract(num1, num2)}");
+            Console.WriteLine($"Multiply {CustomMath.Multiply(num1, num2)}");
+            Console.WriteLine($"Divide {CustomMath.Divide(num1, num2)}");
 
-
-            double result = CalculateData.Add(x, y);
-
-            UserMessages.PrintResultMessage($"The sum of {x} and {y} is {result}");
 
             Console.Beep();
             Console.ReadKey();
