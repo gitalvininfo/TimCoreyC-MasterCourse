@@ -10,26 +10,24 @@ namespace CSharpMasterCourse
     class Program
     {
 
-
         static void Main(string[] args)
         {
-            RunsALot();
+
+            string firstName = RequestData.GetAString("What is your firstname? ");
+            
+            UserMessages.ApplicationStartMessage(firstName);
+
+            double x = RequestData.GetADouble("Please enter your enter first number: ");
+            double y = RequestData.GetADouble("Please enter your enter second number: ");
+
+
+            double result = CalculateData.Add(x, y);
+
+            UserMessages.PrintResultMessage($"The sum of {x} and {y} is {result}");
+
             Console.Beep();
             Console.ReadKey();
         }
-
-
-        private static void RunsALot()
-        {
-            for(int i = 0; i <= 100; i++)
-            {
-                if(i == 73)
-                {
-                    //throw new Exception(AccessViolationException e);
-                }
-            }
-        }
-
 
     }
 }
