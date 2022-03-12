@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CSharpMasterCourse.Models;
-using FoundationInfo;
+using GGEZ;
 
 namespace CSharpMasterCourse
 {
@@ -15,8 +14,8 @@ namespace CSharpMasterCourse
         static void Main(string[] args)
         {
 
-            Person person = new Person();
-            Calculation.AddMethod(34, 35);
+            double result = Calculate.Multiply(4, 3);
+            Console.WriteLine(result);
 
             Console.Beep();
             Console.ReadLine();
