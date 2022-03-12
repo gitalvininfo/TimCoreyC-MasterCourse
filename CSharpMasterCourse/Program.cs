@@ -12,13 +12,15 @@ namespace CSharpMasterCourse
 
         static void Main(string[] args)
         {
-            PersonModel person = new PersonModel("corey");
-            person.FirstName = "tim";
-            person.Age = 40;
-            person.SSN = "123-45-6789";
 
-            Console.WriteLine(person.FullName);
-            Console.WriteLine(person.SSN);
+            Address address = new Address();
+            address.Street = "Casiana";
+            address.City = "Bacolod";
+            address.State = "Negros";
+            address.Zip = "6100";
+
+            Console.WriteLine(address.FullAddress);
+
 
             Console.Beep();
             Console.ReadLine();
