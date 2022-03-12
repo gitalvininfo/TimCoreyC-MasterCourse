@@ -1,5 +1,5 @@
 ﻿
-using DemoLibrary.Models;
+using SampleLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +12,14 @@ namespace CSharpMasterCourse
     {
 
         static void Main(string[] args)
-        { 
+        {
 
-            /* user interfaces reference libraries, libraries does not reference user interfaces */
             PersonModel person = new PersonModel();
+            person.FirstName = "Alvin";
+            person.LastName = "Yanson";
 
-            person.FirstName = "Tim";
-            person.LastName = "Corey";
-
-            Console.WriteLine(person.FirstName);
+            Console.WriteLine(person.GetFullName());
+           
 
             Console.Beep();
             Console.ReadLine();
