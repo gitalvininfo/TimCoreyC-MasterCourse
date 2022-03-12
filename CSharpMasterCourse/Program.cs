@@ -13,38 +13,50 @@ namespace CSharpMasterCourse
         static void Main(string[] args)
         {
 
-            List<PersonModel> people = new List<PersonModel>();
+            List<Person> people = new List<Person>();
             string firstName = "";
             string lastName = "";
-
+            int age = 0;
+            string streetName = "";
+            string cityName = "";
 
             do
             {
-
-                Console.Write("What is your firstname? ");
+                Console.Write("First name: ");
                 firstName = Console.ReadLine();
 
-                Console.Write("What is your lastname? ");
+                Console.Write("Last name: ");
                 lastName = Console.ReadLine();
 
+                Console.Write("Age: ");
+                age = Convert.ToInt32(Console.ReadLine());
 
-                if (firstName.ToLower() != "exit")
-                {
-                    PersonModel person = new PersonModel();
-                    person.FirstName = firstName;
-                    person.LastName = lastName;
+                Console.Write("Streetname: ");
+                streetName = Console.ReadLine();
 
-                    people.Add(person);
-                }
+                Console.Write("Cityname: ");
+                cityName = Console.ReadLine();
+
+
+                Person person = new Person();
+                person.FirstName = firstName;
+                person.LastName = lastName;
+                person.Age = age;
+                person.CompleteAddress = new Address();
+                person.CompleteAddress.StreetName = streetName;
+                person.CompleteAddress.CityName = cityName;
+
+                people.Add(person);
 
 
             } while (firstName.ToLower() != "exit");
 
 
-            foreach(PersonModel p in people)
+            foreach(Person p in people)
             {
-                ProcessPerson.GreetPerson(p);
+                Console.WriteLine(p.displayData());
             }
+            
 
             Console.Beep();
             Console.ReadLine();
@@ -54,23 +66,3 @@ namespace CSharpMasterCourse
 }
 
 
-
-
-
-
-
-//List<PersonModel> people = new List<PersonModel>();
-
-//PersonModel person = new PersonModel();
-//person.firstname = "alvin";
-//people.Add(person);
-
-//person = new PersonModel();
-//person.firstname = "yanson";
-//people.Add(person);
-
-
-//foreach (PersonModel p in people)
-//{
-//    Console.WriteLine(p.firstname);
-//}
