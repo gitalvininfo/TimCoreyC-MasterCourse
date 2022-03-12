@@ -1,10 +1,10 @@
 ﻿
+using DemoLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GGEZ;
 
 namespace CSharpMasterCourse
 {
@@ -12,10 +12,15 @@ namespace CSharpMasterCourse
     {
 
         static void Main(string[] args)
-        {
+        { 
 
-            double result = Calculate.Multiply(4, 3);
-            Console.WriteLine(result);
+            /* user interfaces reference libraries, libraries does not reference user interfaces */
+            PersonModel person = new PersonModel();
+
+            person.FirstName = "Tim";
+            person.LastName = "Corey";
+
+            Console.WriteLine(person.FirstName);
 
             Console.Beep();
             Console.ReadLine();
