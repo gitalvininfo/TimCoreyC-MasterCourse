@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CSharpMasterCourse.Models;
+using FoundationInfo;
 
 namespace CSharpMasterCourse
 {
@@ -13,14 +15,8 @@ namespace CSharpMasterCourse
         static void Main(string[] args)
         {
 
-            Address address = new Address();
-            address.Street = "Casiana";
-            address.City = "Bacolod";
-            address.State = "Negros";
-            address.Zip = "6100";
-
-            Console.WriteLine(address.FullAddress);
-
+            Person person = new Person();
+            Calculation.AddMethod(34, 35);
 
             Console.Beep();
             Console.ReadLine();
