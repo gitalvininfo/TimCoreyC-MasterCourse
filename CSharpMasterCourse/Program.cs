@@ -13,23 +13,41 @@ namespace CSharpMasterCourse
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Welcome to my Math.");
-            Console.Write("Enter first number: ");
-            double num1 = Convert.ToDouble(Console.ReadLine());
+            List<PersonModel> people = new List<PersonModel>();
+            string firstName = "";
+            string lastName = "";
 
-            Console.Write("Enter second number: ");
-            double num2 = Convert.ToDouble(Console.ReadLine());
 
-            
+            do
+            {
 
-            Console.WriteLine($"Add {CustomMath.Add(num1, num2)}");
-            Console.WriteLine($"Subtract {CustomMath.Subtract(num1, num2)}");
-            Console.WriteLine($"Multiply {CustomMath.Multiply(num1, num2)}");
-            Console.WriteLine($"Divide {CustomMath.Divide(num1, num2)}");
+                Console.Write("What is your firstname? ");
+                firstName = Console.ReadLine();
 
+                Console.Write("What is your lastname? ");
+                lastName = Console.ReadLine();
+
+
+                if (firstName.ToLower() != "exit")
+                {
+                    PersonModel person = new PersonModel();
+                    person.FirstName = firstName;
+                    person.LastName = lastName;
+
+                    people.Add(person);
+                }
+
+
+            } while (firstName.ToLower() != "exit");
+
+
+            foreach(PersonModel p in people)
+            {
+                ProcessPerson.GreetPerson(p);
+            }
 
             Console.Beep();
-            Console.ReadKey();
+            Console.ReadLine();
         }
 
     }
@@ -41,3 +59,18 @@ namespace CSharpMasterCourse
 
 
 
+//List<PersonModel> people = new List<PersonModel>();
+
+//PersonModel person = new PersonModel();
+//person.firstname = "alvin";
+//people.Add(person);
+
+//person = new PersonModel();
+//person.firstname = "yanson";
+//people.Add(person);
+
+
+//foreach (PersonModel p in people)
+//{
+//    Console.WriteLine(p.firstname);
+//}
