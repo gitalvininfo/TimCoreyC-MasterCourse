@@ -143,10 +143,10 @@ namespace BattleshipLiteLibrary
             string row = "";
             int column = 0;
 
-            //if(shot.Length != 2)
-            //{
-            //    throw new ArgumentException("This was an invalid shot type", "shot");
-            //}
+            if (shot.Length != 2)
+            {
+                throw new ArgumentException("This was an invalid shot type", "shot");
+            }
 
             char[] shotArray = shot.ToArray();
 
@@ -160,7 +160,7 @@ namespace BattleshipLiteLibrary
         {
             bool isValidShot = false;
 
-            foreach (var gridSpot in player.ShipLocations)
+            foreach (var gridSpot in player.ShotGrid)
             {
                 /* check for each row and column if it is already taken */
                 if (gridSpot.SpotLetter == row.ToUpper() && gridSpot.SpotNumber == column)
@@ -177,14 +177,15 @@ namespace BattleshipLiteLibrary
 
         public static bool IdentifyShotResult(PlayerInfoModel opponent, string row, int column)
         {
-            bool isAHit = true;
+            bool isAHit = false;
 
             foreach (var ship in opponent.ShipLocations)
             {
                 /* check for each row and column if it is already taken */
                 if (ship.SpotLetter == row.ToUpper() && ship.SpotNumber == column)
                 {
-                    isAHit = false;
+                    isAHit = true;
+                    ship.Status = GridSpotStatus.Sunk;
                 }
             }
 
@@ -193,7 +194,7 @@ namespace BattleshipLiteLibrary
 
         public static void MarkShotResult(PlayerInfoModel player, string row, int column, bool isAHit)
         {
-            foreach (var gridSpot in player.ShipLocations)
+            foreach (var gridSpot in player.ShotGrid)
             {
                 /* check for each row and column if it is already taken */
                 if (gridSpot.SpotLetter == row.ToUpper() && gridSpot.SpotNumber == column)
