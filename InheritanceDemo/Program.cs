@@ -11,55 +11,38 @@ namespace InheritanceDemo
         static void Main(string[] args)
         {
 
-            List<Phone> phones = new List<Phone>();
-            phones.Add(new Cellphone());
-            phones.Add(new Smartphone());
-
-            foreach(var phone in phones)
-            {
-                if(phone is Cellphone cell)
-                {
-                    cell.Carrier = "";
-                }
-                if(phone is Smartphone smartphone)
-                {
-                   smartphone.
-                }
-            }
-           
+            Vehicle vehicle = new Vehicle();
+            Boat boat = new Boat();
+            boat.Start();
         }
 
     }
 
-    public class Landline : Phone
+    public class Vehicle
     {
+        public void Start()
+        {
 
-    }
-
-    public class Smartphone : Phone
-    {
-        List<string> Apps = new List<string>();
-
-        public void ConnectToInternet()
+        }
+        public void Stop()
         {
 
         }
     }
 
-    public class Cellphone : Phone
+    public class Boat : Vehicle
     {
-        public string Carrier { get; set; }
+
     }
 
-    public class Phone
+    public class Car : Vehicle
     {
-        public void PlaceCall()
-        {
 
-        }
-        public void EndCall()
-        {
-
-        }
     }
+
+    public class Motorcycle : Vehicle
+    {
+
+    }
+
 }
