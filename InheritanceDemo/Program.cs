@@ -11,61 +11,35 @@ namespace InheritanceDemo
         static void Main(string[] args)
         {
 
-            List<IComputerController> controllers = new List<IComputerController>();
+            List<IRun> obj = new List<IRun>();
 
-            controllers.Add(new Keyboard());
-            controllers.Add(new Mouse());
-
-            foreach (IComputerController controller in controllers)
-            {
-                if(controller is Keyboard keyboard)
-                {
-                }
-            }
+            obj.Add(new Person());
+            obj.Add(new Animal());
 
         }
 
     }
 
-
-    public interface IComputerController
+    public interface IRun
     {
-        void Connect();
-        void CurrentKeyPressed();
+        void Run();
     }
 
-    public class Keyboard : IComputerController
+    public class Person : IRun
     {
-        public void Connect()
-        {
-        }
-
-        public void CurrentKeyPressed()
-        {
-        }
-
-        public void EnterKeyPressed()
+        public void Run()
         {
 
         }
     }
 
-    public class Mouse : IComputerController
+    public class Animal : IRun
     {
-        public void Connect()
-        {
-
-        }
-
-        public void CurrentKeyPressed()
-        {
-
-        }
-
-        public void RightClick()
+        public void Run()
         {
 
         }
     }
+
 
 }
