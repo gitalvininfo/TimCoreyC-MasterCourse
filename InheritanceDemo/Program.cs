@@ -11,38 +11,61 @@ namespace InheritanceDemo
         static void Main(string[] args)
         {
 
-            Vehicle vehicle = new Vehicle();
-            Boat boat = new Boat();
-            boat.Start();
+            List<IComputerController> controllers = new List<IComputerController>();
+
+            controllers.Add(new Keyboard());
+            controllers.Add(new Mouse());
+
+            foreach (IComputerController controller in controllers)
+            {
+                if(controller is Keyboard keyboard)
+                {
+                }
+            }
+
         }
 
     }
 
-    public class Vehicle
+
+    public interface IComputerController
     {
-        public void Start()
+        void Connect();
+        void CurrentKeyPressed();
+    }
+
+    public class Keyboard : IComputerController
+    {
+        public void Connect()
+        {
+        }
+
+        public void CurrentKeyPressed()
+        {
+        }
+
+        public void EnterKeyPressed()
         {
 
         }
-        public void Stop()
+    }
+
+    public class Mouse : IComputerController
+    {
+        public void Connect()
         {
 
         }
-    }
 
-    public class Boat : Vehicle
-    {
+        public void CurrentKeyPressed()
+        {
 
-    }
+        }
 
-    public class Car : Vehicle
-    {
+        public void RightClick()
+        {
 
-    }
-
-    public class Motorcycle : Vehicle
-    {
-
+        }
     }
 
 }
