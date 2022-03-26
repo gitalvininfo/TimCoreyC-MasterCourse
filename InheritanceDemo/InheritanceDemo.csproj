@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookModel.cs" />
+    <Compile Include="ExcavatorModel.cs" />
+    <Compile Include="IInvetoryItem.cs" />
+    <Compile Include="InventoryItemModel.cs" />
+    <Compile Include="IPurchasable.cs" />
+    <Compile Include="IRentable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VehicleModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
