@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DemoLibraryy
 {
-    internal class Person
+    public class Person
     {
+        public string FirstName { get; set; }
+        protected string LastName { get; set; }
+        private int age { get; set; }
+
     }
 }

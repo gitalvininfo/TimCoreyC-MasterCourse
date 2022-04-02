@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InheritanceDemo
+﻿namespace ConsoleApp1
 {
     class Program
     {
@@ -12,7 +6,7 @@ namespace InheritanceDemo
         {
 
             Car car = new Car();
-
+            Console.WriteLine(car.NumberOfWheels);
             Console.ReadLine();
 
         }
@@ -27,9 +21,9 @@ namespace InheritanceDemo
         public int YearManufactured { get; set; }
     }
 
-    public class Car
+    public class Car : Vehicle
     {
-        public int NumberOfWheels { get; set; }
+        public int NumberOfWheels { get; set; } = 4;
     }
 
 
