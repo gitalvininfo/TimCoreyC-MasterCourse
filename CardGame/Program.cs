@@ -5,56 +5,37 @@
         static void Main(string[] args)
         {
 
-            HotelRoom hotelRoom = new HotelRoom();
-            hotelRoom.TurnOnAir().SetTemperature(72).OpenShades();
+            Person person = new Person();
 
-            Console.WriteLine(hotelRoom.Temperature);
+            person.SetDefaultAge().PrintInfo();
                         
             Console.ReadLine();
 
         }
-
     }
-
-    public class HotelRoom
+    public class Person
     {
-        public int Temperature { get; set; }
-        public bool IsAirRunning { get; set; }
-        public bool AreShadesOpen { get; set; }
+        public int Age { get; set; }
 
+        public Person()
+        {
+        }
     }
 
     public static class ExtensionSample
     {
-        public static void PrintToConsole(this string message)
+        public static Person SetDefaultAge(this Person person)
         {
-            Console.WriteLine(message);
+            person.Age = 18;
+            return person;
         }
 
-        public static HotelRoom TurnOnAir(this HotelRoom room)
+        public static void PrintInfo(this Person person)
         {
-            room.IsAirRunning = true;
-            return room;
-        }
-
-        public static HotelRoom SetTemperature(this HotelRoom room, int temperature)
-        {
-            room.Temperature = temperature;
-            return room;
-        }
-
-        public static HotelRoom OpenShades(this HotelRoom room)
-        {
-            room.AreShadesOpen = true;
-            return room;
-        }
-
-        public static HotelRoom CloseShades(this HotelRoom room)
-        {
-            room.AreShadesOpen = false;
-            return room;
+            Console.WriteLine($"{person.Age}");
         }
     }
+
 
 
 }
