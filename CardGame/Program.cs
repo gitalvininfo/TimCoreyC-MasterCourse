@@ -5,52 +5,56 @@
         static void Main(string[] args)
         {
 
-            Person person = new Person();
-            
-            
+            HotelRoom hotelRoom = new HotelRoom();
+            hotelRoom.TurnOnAir().SetTemperature(72).OpenShades();
+
+            Console.WriteLine(hotelRoom.Temperature);
+                        
             Console.ReadLine();
 
         }
 
     }
 
-
-    public class Person
+    public class HotelRoom
     {
+        public int Temperature { get; set; }
+        public bool IsAirRunning { get; set; }
+        public bool AreShadesOpen { get; set; }
 
+    }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-
-        public Person()
+    public static class ExtensionSample
+    {
+        public static void PrintToConsole(this string message)
         {
-
+            Console.WriteLine(message);
         }
 
-        public Person(string firstName, string lastName, string email)
+        public static HotelRoom TurnOnAir(this HotelRoom room)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
+            room.IsAirRunning = true;
+            return room;
         }
 
-        public Person(string firstName, string lastName)
+        public static HotelRoom SetTemperature(this HotelRoom room, int temperature)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            room.Temperature = temperature;
+            return room;
         }
 
-
-        public void GenerateEmail()
+        public static HotelRoom OpenShades(this HotelRoom room)
         {
-            Email = $"{FirstName}.{LastName}@aol.com";
+            room.AreShadesOpen = true;
+            return room;
         }
 
-        public void GenerateEmail(string domain)
+        public static HotelRoom CloseShades(this HotelRoom room)
         {
-            Email = $"{FirstName}.{LastName}@{domain}";
-
+            room.AreShadesOpen = false;
+            return room;
         }
     }
+
+
 }
