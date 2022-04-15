@@ -5,14 +5,8 @@
         static void Main(string[] args)
         {
 
-            BlackJack deck = new BlackJack();
-
-            var hand = deck.DealCards();
-
-            foreach(var card in hand)
-            {
-                Console.WriteLine($"{card.Value.ToString()} of {card.Suit.ToString()}");
-            }
+            Person person = new Person();
+            
             
             Console.ReadLine();
 
@@ -20,97 +14,43 @@
 
     }
 
-    public abstract class Deck
+
+    public class Person
     {
-        protected List<PlayingCard> Fulldeck = new List<PlayingCard>();
-        protected List<PlayingCard> DrawPile = new List<PlayingCard>();
-        protected List<PlayingCard> DiscardPile = new List<PlayingCard>();
 
 
-        protected void CreateDeck()
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+
+        public Person()
         {
-            Fulldeck.Clear();
 
-            for(int suit = 0; suit < 4; suit++ )
-            {
-                for(int val = 0; val < 13; val++)
-                {
-                    Fulldeck.Add(new PlayingCard { Suit = (CardSuit)suit, Value = (CardValue)val });
-                }
-            }
         }
 
-        public virtual void ShuffleDeck()
+        public Person(string firstName, string lastName, string email)
         {
-            var rand = new Random();
-            DrawPile = Fulldeck.OrderBy(x => rand.Next()).ToList();
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
         }
 
-        public abstract List<PlayingCard> DealCards();
-
-        protected virtual PlayingCard DrawOneCard()
+        public Person(string firstName, string lastName)
         {
-            PlayingCard output = DrawPile.Take(1).First();
-            DrawPile.Remove(output);
-            return output;
-        }
-    }
-
-    public class PokerDeck : Deck
-    {
-        public PokerDeck()
-        {
-            CreateDeck();
-            ShuffleDeck();
+            FirstName = firstName;
+            LastName = lastName;
         }
 
-        public override List<PlayingCard> DealCards()
-        {
-            List<PlayingCard> output = new List<PlayingCard>();
-            for(int i = 0; i < 5; i++)
-            {
-                output.Add(DrawOneCard());
-            }
 
-            return output;
+        public void GenerateEmail()
+        {
+            Email = $"{FirstName}.{LastName}@aol.com";
         }
 
-        public List<PlayingCard> RequestCards(List<PlayingCard> cardsToDiscard)
+        public void GenerateEmail(string domain)
         {
-            List<PlayingCard> output = new List<PlayingCard>();
+            Email = $"{FirstName}.{LastName}@{domain}";
 
-
-            foreach(var card in cardsToDiscard)
-            {
-                output.Add(DrawOneCard());
-                DiscardPile.Add(card);
-            }
-
-            return output;
-        }
-    }
-
-    public class BlackJack : Deck
-    {
-        public BlackJack()
-        {
-            CreateDeck();
-            ShuffleDeck();
-        }
-        public override List<PlayingCard> DealCards()
-        {
-            List<PlayingCard> output = new List<PlayingCard>();
-            for (int i = 0; i < 2; i++)
-            {
-                output.Add(DrawOneCard());
-            }
-
-            return output;
-        }
-
-        public PlayingCard RequestCard()
-        {
-            return DrawOneCard();
         }
     }
 }
